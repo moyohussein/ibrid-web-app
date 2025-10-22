@@ -1,61 +1,63 @@
 import React from "react";
-import { Testimonial } from "@/types";
 import Image from "next/image";
+
+import { Testimonial } from "@/types";
 
 const SingleItem = ({ testimonial }: { testimonial: Testimonial }) => {
   return (
     <div className="shadow-testimonial bg-white rounded-[10px] py-7.5 px-4 sm:px-8.5 m-1">
       <div className="flex items-center gap-1 mb-5">
         <Image
-          src="/images/icons/icon-star.svg"
           alt="star icon"
-          width={15}
           height={15}
+          src="/images/icons/icon-star.svg"
+          width={15}
         />
         <Image
-          src="/images/icons/icon-star.svg"
           alt="star icon"
-          width={15}
           height={15}
+          src="/images/icons/icon-star.svg"
+          width={15}
         />
         <Image
-          src="/images/icons/icon-star.svg"
           alt="star icon"
-          width={15}
           height={15}
+          src="/images/icons/icon-star.svg"
+          width={15}
         />
         <Image
-          src="/images/icons/icon-star.svg"
           alt="star icon"
-          width={15}
           height={15}
+          src="/images/icons/icon-star.svg"
+          width={15}
         />
         <Image
-          src="/images/icons/icon-star.svg"
           alt="star icon"
-          width={15}
           height={15}
+          src="/images/icons/icon-star.svg"
         />
       </div>
 
       <p className="text-dark mb-6">{testimonial.review}</p>
 
-      <a href="#" className="flex items-center gap-4">
+      <div className="flex items-center gap-4" role="listitem">
         <div className="w-12.5 h-12.5 rounded-full overflow-hidden">
           <Image
-            src={testimonial.authorImg}
-            alt="author"
+            alt={`${testimonial.authorName}, ${testimonial.authorRole}`}
+            aria-hidden="false"
             className="w-12.5 h-12.5 rounded-full overflow-hidden"
-            width={50}
             height={50}
+            src={testimonial.authorImg}
+            width={50}
           />
         </div>
-
         <div>
-          <h3 className="font-medium text-dark">{testimonial.authorName}</h3>
-          <p className="text-custom-sm">{testimonial.authorRole}</p>
+          <h5 className="font-medium text-dark text-base">
+            {testimonial.authorName}
+          </h5>
+          <p className="text-sm">{testimonial.authorRole}</p>
         </div>
-      </a>
+      </div>
     </div>
   );
 };

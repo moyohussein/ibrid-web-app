@@ -21,20 +21,30 @@ const PromoBanner = () => {
               A15 Bionic, with a 5‑core GPU, powers all the latest features.
             </p>
 
-            <a
-              href="#"
-              className="inline-flex font-medium text-custom-sm text-white bg-blue py-[11px] px-9.5 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
+            <button
+              aria-label="Buy Now"
+              className="inline-flex font-medium text-custom-sm text-white bg-blue py-[11px] px-9.5 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              type="button"
+              onClick={() => {
+                // Add buy now logic here
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  // Add buy now logic here
+                }
+              }}
             >
               Buy Now
-            </a>
+            </button>
           </div>
 
           <Image
-            src="/images/promo/promo-01.png"
             alt="promo img"
             className="absolute bottom-0 right-4 lg:right-26 -z-1"
-            width={274}
             height={350}
+            src="/images/promo/promo-01.png"
+            width={274}
           />
         </div>
 
@@ -42,11 +52,11 @@ const PromoBanner = () => {
           {/* <!-- promo banner small --> */}
           <div className="relative z-1 overflow-hidden rounded-lg bg-[#DBF4F3] py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
             <Image
-              src="/images/promo/promo-02.png"
               alt="promo img"
               className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-10 -z-1"
-              width={241}
               height={241}
+              src="/images/promo/promo-02.png"
+              width={241}
             />
 
             <div className="text-right">
@@ -62,23 +72,33 @@ const PromoBanner = () => {
                 Flat 20% off
               </p>
 
-              <a
-                href="#"
-                className="inline-flex font-medium text-custom-sm text-white bg-teal py-2.5 px-8.5 rounded-md ease-out duration-200 hover:bg-teal-dark mt-9"
+              <button
+                aria-label="Grab Now"
+                className="inline-flex font-medium text-custom-sm text-white bg-teal py-2.5 px-8.5 rounded-md ease-out duration-200 hover:bg-teal-dark mt-9 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+                type="button"
+                onClick={() => {
+                  // Add grab now logic here
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    // Add grab now logic here
+                  }
+                }}
               >
                 Grab Now
-              </a>
+              </button>
             </div>
           </div>
 
           {/* <!-- promo banner small --> */}
           <div className="relative z-1 overflow-hidden rounded-lg bg-[#FFECE1] py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
             <Image
-              src="/images/promo/promo-03.png"
               alt="promo img"
               className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-8.5 -z-1"
-              width={200}
               height={200}
+              src="/images/promo/promo-03.png"
+              width={200}
             />
 
             <div>
@@ -95,12 +115,22 @@ const PromoBanner = () => {
                 everything.
               </p>
 
-              <a
-                href="#"
-                className="inline-flex font-medium text-custom-sm text-white bg-orange py-2.5 px-8.5 rounded-md ease-out duration-200 hover:bg-orange-dark mt-7.5"
+              <button
+                aria-label="Shop Now"
+                className="inline-flex font-medium text-custom-sm text-white bg-orange py-2.5 px-8.5 rounded-md ease-out duration-200 hover:bg-orange-dark mt-7.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                type="button"
+                onClick={() => {
+                  // Add shop now logic here
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    // Add shop now logic here
+                  }
+                }}
               >
-                Buy Now
-              </a>
+                Shop Now
+              </button>
             </div>
           </div>
         </div>

@@ -46,6 +46,7 @@ export const wishlist = createSlice({
     },
     removeItemFromWishlist: (state, action: PayloadAction<number>) => {
       const itemId = action.payload;
+
       state.items = state.items.filter((item) => item.id !== itemId);
     },
 

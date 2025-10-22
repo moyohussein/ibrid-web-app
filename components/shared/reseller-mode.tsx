@@ -148,7 +148,7 @@ export default function ResellerModal() {
                 </div>
               </ModalBody>
               <ModalFooter>
-                <Button className="border-[#706FD3] text-[#706FD3]" color="danger" onPress={onClose} variant="bordered">
+                <Button className="border-[#706FD3] text-[#706FD3]" color="danger" variant="bordered" onPress={onClose}>
                   Register Now
                 </Button>
               </ModalFooter>

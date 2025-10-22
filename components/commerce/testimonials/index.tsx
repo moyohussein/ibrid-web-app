@@ -1,10 +1,9 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useCallback, useRef } from "react";
-import testimonialsData from "./testimonials-data";
 import Image from "next/image";
 
-// Import Swiper styles
+import testimonialsData from "./testimonials-data";
 import "swiper/css/navigation";
 import "swiper/css";
 import SingleItem from "./single-item";
@@ -32,10 +31,10 @@ const Testimonials = () => {
               <div>
                 <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5">
                   <Image
-                    src="/images/icons/icon-08.svg"
                     alt="icon"
-                    width={17}
                     height={17}
+                    src="/images/icons/icon-08.svg"
+                    width={17}
                   />
                   Testimonials
                 </span>
@@ -45,48 +44,70 @@ const Testimonials = () => {
               </div>
 
               <div className="flex items-center gap-3">
-                <div onClick={handlePrev} className="swiper-button-prev">
+                <button
+                  aria-label="Previous testimonial"
+                  className="swiper-button-prev focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-full p-1"
+                  type="button"
+                  onClick={handlePrev}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handlePrev();
+                    }
+                  }}
+                >
                   <svg
+                    aria-hidden="true"
                     className="fill-current"
-                    width="24"
+                    fill="none"
                     height="24"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    width="24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fillRule="evenodd"
                       clipRule="evenodd"
                       d="M15.4881 4.43057C15.8026 4.70014 15.839 5.17361 15.5694 5.48811L9.98781 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5695C15.1736 19.839 14.7001 19.8026 14.4306 19.4881L8.43056 12.4881C8.18981 12.2072 8.18981 11.7928 8.43056 11.5119L14.4306 4.51192C14.7001 4.19743 15.1736 4.161 15.4881 4.43057Z"
-                      fill=""
+                      fill="currentColor"
+                      fillRule="evenodd"
                     />
                   </svg>
-                </div>
+                </button>
 
-                <div onClick={handleNext} className="swiper-button-next">
+                <button
+                  aria-label="Next testimonial"
+                  className="swiper-button-next focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 rounded-full p-1"
+                  type="button"
+                  onClick={handleNext}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      handleNext();
+                    }
+                  }}
+                >
                   <svg
+                    aria-hidden="true"
                     className="fill-current"
-                    width="24"
+                    fill="none"
                     height="24"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    width="24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fillRule="evenodd"
                       clipRule="evenodd"
                       d="M8.51192 4.43057C8.82641 4.161 9.29989 4.19743 9.56946 4.51192L15.5695 11.5119C15.8102 11.7928 15.8102 12.2072 15.5695 12.4881L9.56946 19.4881C9.29989 19.8026 8.82641 19.839 8.51192 19.5695C8.19743 19.2999 8.161 18.8264 8.43057 18.5119L14.0122 12L8.43057 5.48811C8.161 5.17361 8.19743 4.70014 8.51192 4.43057Z"
-                      fill=""
+                      fill="currentColor"
+                      fillRule="evenodd"
                     />
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
 
             <Swiper
               ref={sliderRef}
-              slidesPerView={3}
-              spaceBetween={20}
               breakpoints={{
                 // when window width is >= 640px
                 0: {
@@ -101,6 +122,8 @@ const Testimonials = () => {
                   slidesPerView: 3,
                 },
               }}
+              slidesPerView={3}
+              spaceBetween={20}
             >
               {testimonialsData.map((item, key) => (
                 <SwiperSlide key={key}>

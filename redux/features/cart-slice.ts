@@ -1,4 +1,5 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { RootState } from "../store";
 
 type InitialState = {
@@ -45,6 +46,7 @@ export const cart = createSlice({
     },
     removeItemFromCart: (state, action: PayloadAction<number>) => {
       const itemId = action.payload;
+
       state.items = state.items.filter((item) => item.id !== itemId);
     },
     updateCartItemQuantity: (

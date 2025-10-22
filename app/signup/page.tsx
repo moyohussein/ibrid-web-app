@@ -170,10 +170,10 @@ export default function SignupPage() {
                   <Checkbox
                     color="primary"
                     isSelected={formData.agreeToTerms}
+                    size="sm"
                     onValueChange={(checked) =>
                       handleInputChange("agreeToTerms", checked)
                     }
-                    size="sm"
                   />
                   <span className="text-sm text-gray-300">
                     I agree to the{" "}

@@ -29,8 +29,8 @@ const HeroFeature = () => {
     <div className="max-w-[1060px] w-full mx-auto px-4 sm:px-8 xl:px-0">
       <div className="grid grid-cols-4 gap-7.5 xl:gap-12.5 mt-10">
         {featureData.map((item, key) => (
-          <div className="flex gap-4" key={key}>
-            <Image src={item.img} alt="icons" width={36} height={36} className="max-w-9 max-h-9" />
+          <div key={key} className="flex gap-4">
+            <Image alt="icons" className="max-w-9 max-h-9" height={36} src={item.img} width={36} />
 
             <div>
               <h3 className="font-medium text-dark">{item.title}</h3>

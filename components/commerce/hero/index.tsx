@@ -1,7 +1,8 @@
 import React from "react";
-import HeroCarousel from "./HeroCarousel";
-import HeroFeature from "./HeroFeature";
 import Image from "next/image";
+
+import HeroFeature from "./HeroFeature";
+
 
 const Hero = () => {
   return (
@@ -12,11 +13,11 @@ const Hero = () => {
             <div className="relative z-1 rounded-[10px] bg-white overflow-hidden">
               {/* <!-- bg shapes --> */}
               <Image
-                src="/images/hero/hero-bg.png"
                 alt="hero bg shapes"
                 className="absolute right-0 bottom-0 -z-1"
-                width={534}
                 height={520}
+                src="/images/hero/hero-bg.png"
+                width={534}
               />
 
                 <div className="flex items-center pt-6 sm:pt-0 flex-col-reverse sm:flex-row">
@@ -28,30 +29,39 @@ const Hero = () => {
                     </div>
         
                     <h1 className="font-semibold text-dark text-xl sm:text-xl mb-3">
-                      <a href="#">
+                      <span className="block">
                         Activate AI Mode and experience a smarter way to shop.
                         Let our intelligent assistant help you find, compare, and buy effortlessly.
-                      </a>
+                      </span>
                     </h1>
         
                     <p>
                       Activate AI Mode where your e-commerce journey feels human, not robotic.
                     </p>
         
-                    <a
-                      href="#"
-                      className="inline-flex font-medium text-white text-custom-sm rounded-md bg-dark py-3 px-9 ease-out duration-200 hover:bg-blue mt-10"
+                    <button
+                      aria-label="Activate AI Mode"
+                      className="inline-flex font-medium text-white text-custom-sm rounded-md bg-dark py-3 px-9 ease-out duration-200 hover:bg-blue mt-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                      onClick={() => {
+                        // Add activation logic here
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          // Add activation logic here
+                        }
+                      }}
                     >
                       Activate AI Mode
-                    </a>
+                    </button>
                   </div>
         
                   <div>
                     <Image
-                      src="/images/hero/hero-01.png"
                       alt="headphone"
-                      width={351}
                       height={358}
+                      src="/images/hero/hero-01.png"
+                      width={351}
                     />
                   </div>
                 </div>

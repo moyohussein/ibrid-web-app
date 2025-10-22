@@ -1,4 +1,5 @@
 "use client";
+import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useCallback, useRef } from "react";
 import Image from "next/image";
@@ -9,16 +10,16 @@ import "swiper/css";
 import SingleItem from "./single-item";
 
 const Testimonials = () => {
-  const sliderRef = useRef(null);
+  const sliderRef = useRef<SwiperType | null>(null);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
+    sliderRef.current.slidePrev();
   }, []);
 
   const handleNext = useCallback(() => {
     if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
+    sliderRef.current.slideNext();
   }, []);
 
   return (
@@ -107,7 +108,10 @@ const Testimonials = () => {
             </div>
 
             <Swiper
-              ref={sliderRef}
+              onSwiper={(swiper) => {
+                // @ts-ignore - Swiper's type definitions are not perfect
+                sliderRef.current = swiper;
+              }}
               breakpoints={{
                 // when window width is >= 640px
                 0: {

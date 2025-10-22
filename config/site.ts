@@ -1,0 +1,38 @@
+export type SiteConfig = typeof siteConfig;
+
+export const siteConfig = {
+  name: "Ibrid",
+  description: "Let your customers explore and connect with your products through detailed showcases and interactive features.",
+  navItems: [
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+  ],
+  navMenuItems: [
+    {
+      label: "Profile",
+      href: "/profile",
+    },
+    {
+      label: "Calendar",
+      href: "/calendar",
+    },
+    {
+      label: "Settings",
+      href: "/settings",
+    },
+    {
+      label: "Help & Feedback",
+      href: "/help-feedback",
+    },
+    {
+      label: "Logout",
+      href: "/logout",
+    },
+  ],
+};

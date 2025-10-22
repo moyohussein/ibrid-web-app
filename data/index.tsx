@@ -1,4 +1,11 @@
-import { FeatureItem } from "@/app/(main)/page";
+interface FeatureItem {
+  description: string;
+  imageAlt: string;
+  imageSrc: string;
+  title: string;
+  reversed?: boolean;
+  subtitle?: string;
+}
 
 export const userType = [
   { key: "myself", label: "MySelf" },
